@@ -518,10 +518,341 @@ body {
     font-size: 0.85rem;
 }
 
+/* Landing Page Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.product-card {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: 48px 40px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    transition: all 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.product-card-featured {
+    border: 2px solid var(--color-primary);
+}
+
+.product-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.product-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-free {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.badge-new {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.product-card h2 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+}
+
+.product-tagline {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+.product-description {
+    color: var(--color-text);
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.product-features {
+    list-style: none;
+    margin-bottom: 32px;
+}
+
+.product-features li {
+    padding: 8px 0;
+    color: var(--color-text);
+    font-size: 0.95rem;
+}
+
+.product-cta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Sports Tags */
+.sports-grid {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.sport-tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Hero Variants */
+.hero-landing {
+    background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+    padding: 180px 0 120px;
+}
+
+.hero-club {
+    background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.2);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-note {
+    margin-top: 20px;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Feature Rows */
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.feature-row-reverse {
+    direction: rtl;
+}
+
+.feature-row-reverse > * {
+    direction: ltr;
+}
+
+@media (max-width: 900px) {
+    .feature-row,
+    .feature-row-reverse {
+        grid-template-columns: 1fr;
+        direction: ltr;
+    }
+}
+
+.feature-content {
+    max-width: 500px;
+}
+
+.feature-tag {
+    display: inline-block;
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+.feature-content h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.feature-content p {
+    color: var(--color-text-light);
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.feature-list {
+    list-style: none;
+}
+
+.feature-list li {
+    padding: 8px 0;
+    padding-left: 28px;
+    position: relative;
+    color: var(--color-text);
+}
+
+.feature-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.feature-image {
+    text-align: center;
+}
+
+.screenshot {
+    max-width: 100%;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Use Cases */
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 800px) {
+    .use-cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.use-case {
+    text-align: center;
+    padding: 32px 20px;
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+}
+
+.use-case-icon {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+}
+
+.use-case h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.use-case p {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* Section Variants */
+.section-white {
+    background: var(--color-white);
+}
+
+/* Button Variants */
+.btn-white {
+    background: var(--color-white);
+    color: var(--color-text);
+}
+
+.btn-white:hover {
+    background: var(--color-bg-light);
+}
+
+/* Text Utilities */
+.text-center {
+    text-align: center;
+}
+
+.cta-subtitle {
+    color: var(--color-text-light);
+    margin-bottom: 32px;
+    font-size: 1.1rem;
+}
+
+.section-accent .cta-subtitle {
+    color: rgba(255,255,255,0.8);
+}
+
+.also-text {
+    color: var(--color-text-light);
+    margin-bottom: 16px;
+}
+
+/* Pricing Single */
+.pricing-single {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.pricing-card-large {
+    padding: 48px 40px;
+}
+
+.pricing-features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+}
+
+@media (max-width: 500px) {
+    .pricing-features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 16px;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+}
+
+/* Nav Active State */
+.nav-links a.active {
+    color: var(--color-primary);
+}
+
 /* Responsive Hero */
 @media (max-width: 768px) {
     .hero {
         padding: 120px 0 80px;
+    }
+    
+    .hero-landing {
+        padding: 140px 0 100px;
     }
     
     .hero h1 {
@@ -538,5 +869,9 @@ body {
     
     .nav-links {
         display: none;
+    }
+    
+    .product-card {
+        padding: 32px 24px;
     }
 }
