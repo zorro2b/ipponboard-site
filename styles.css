@@ -1054,6 +1054,17 @@ body {
     text-transform: uppercase;
 }
 
+.pricing-note-free {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-top: -0.25rem;
+}
+
+.pricing-note-free a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
 .pricing-header {
     text-align: center;
 }
