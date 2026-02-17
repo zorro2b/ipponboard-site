@@ -71,10 +71,6 @@ body {
     color: var(--color-secondary);
 }
 
-.logo-icon {
-    font-size: 1.5rem;
-}
-
 .logo-img {
     height: 28px;
     width: 28px;
@@ -329,24 +325,6 @@ body {
 .app-showcase {
     margin-top: 60px;
     text-align: center;
-}
-
-.app-screenshot {
-    max-width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-}
-
-/* CTA Block */
-.cta-block {
-    text-align: center;
-    margin-top: 60px;
-}
-
-.cta-note {
-    margin-top: 16px;
-    color: rgba(255,255,255,0.6);
-    font-size: 0.9rem;
 }
 
 /* Stats */
@@ -794,35 +772,6 @@ body {
     margin-bottom: 16px;
 }
 
-/* Pricing Single */
-.pricing-single {
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.pricing-card-large {
-    padding: 48px 40px;
-}
-
-.pricing-features-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 24px;
-}
-
-@media (max-width: 500px) {
-    .pricing-features-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.pricing-note {
-    text-align: center;
-    margin-top: 16px;
-    color: var(--color-text-light);
-    font-size: 0.9rem;
-}
-
 /* Nav Active State */
 .nav-links a.active {
     color: var(--color-primary);
@@ -1126,12 +1075,6 @@ body {
     display: block;
     width: 100%;
     text-align: center;
-}
-
-.currency-note {
-    color: var(--color-text-light);
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
 }
 
 .currency-switcher {
