@@ -1078,13 +1078,13 @@ body {
 }
 
 .currency-btn:hover {
-    border-color: var(--primary);
-    color: var(--primary);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
 }
 
 .currency-btn.active {
-    background: var(--primary);
-    border-color: var(--primary);
+    background: var(--color-primary);
+    border-color: var(--color-primary);
     color: white;
 }
 
