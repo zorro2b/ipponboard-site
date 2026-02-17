@@ -784,7 +784,8 @@ body {
     font-size: 1.1rem;
 }
 
-.section-accent .cta-subtitle {
+.section-accent .cta-subtitle,
+.section-dark .cta-subtitle {
     color: rgba(255,255,255,0.8);
 }
 
