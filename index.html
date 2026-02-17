@@ -339,13 +339,25 @@
                 });
             }
             
+            // Detect currency from timezone
+            function detectCurrency() {
+                try {
+                    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                    if (tz.startsWith('America/')) return 'usd';
+                    if (tz.startsWith('Europe/')) return 'eur';
+                    return 'aud';
+                } catch (e) {
+                    return 'aud';
+                }
+            }
+            
             // Set up click handlers
             document.querySelectorAll('.currency-btn').forEach(btn => {
                 btn.addEventListener('click', () => setPricing(btn.dataset.currency));
             });
             
-            // Initialize with AUD
-            setPricing('aud');
+            // Initialize based on timezone
+            setPricing(detectCurrency());
         })();
     </script>
 </body>
