@@ -84,7 +84,7 @@
                     <div class="product-cta">
                         <a href="club-management.html" class="btn btn-secondary">Learn More</a>
                         <a href="https://app.ipponboard.com/register" class="btn btn-primary">
-                            Start Free Trial
+                            Start 30-Day Free Trial
                         </a>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                         <li>✓ Email notifications</li>
                         <li>✓ Priority support</li>
                     </ul>
-                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start Free Trial</a>
+                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start 30-Day Free Trial</a>
                 </div>
 
                 <!-- Tier 2 -->
@@ -196,7 +196,7 @@
                         <li>✓ Custom waivers</li>
                         <li>✓ Kiosk check-in mode</li>
                     </ul>
-                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start Free Trial</a>
+                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start 30-Day Free Trial</a>
                 </div>
 
                 <!-- Tier 3 -->
@@ -215,7 +215,7 @@
                         <li>✓ API access</li>
                         <li>✓ Dedicated onboarding</li>
                     </ul>
-                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start Free Trial</a>
+                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start 30-Day Free Trial</a>
                 </div>
 
                 <!-- Tier 4 -->
@@ -234,7 +234,7 @@
                         <li>✓ SLA guarantee</li>
                         <li>✓ Account manager</li>
                     </ul>
-                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start Free Trial</a>
+                    <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-block">Start 30-Day Free Trial</a>
                 </div>
 
                 <!-- Custom -->
@@ -269,7 +269,7 @@
                     Download Scoreboard (Free)
                 </a>
                 <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-large">
-                    Try Club Management Free →
+                    Start 30-Day Free Trial →
                 </a>
             </div>
         </div>
@@ -306,44 +306,12 @@
             </div>
         </div>
     </footer>
-    <!-- Geo-Pricing Script -->
+    <!-- Set AUD pricing -->
     <script>
         (function() {
-            const currencySymbols = { AUD: '$', USD: '$', EUR: '€' };
-            const currencyNames = { AUD: 'AUD', USD: 'USD', EUR: 'EUR' };
-            
-            function setPricing(currency) {
-                const symbol = currencySymbols[currency] || '$';
-                const name = currencyNames[currency] || 'AUD';
-                
-                // Update currency label
-                const label = document.getElementById('currency-label');
-                if (label) label.textContent = name;
-                
-                // Update all price amounts
-                document.querySelectorAll('.price-amount[data-' + currency.toLowerCase() + ']').forEach(el => {
-                    el.textContent = el.getAttribute('data-' + currency.toLowerCase());
-                });
-                
-                // Update currency symbols
-                document.querySelectorAll('.price-currency').forEach(el => {
-                    el.textContent = symbol;
-                });
-            }
-            
-            // Detect region and set pricing
-            fetch('https://ipapi.co/json/')
-                .then(r => r.json())
-                .then(data => {
-                    if (data.country === 'US' || data.country === 'CA') {
-                        setPricing('USD');
-                    } else if (['AT','BE','CY','EE','FI','FR','DE','GR','IE','IT','LV','LT','LU','MT','NL','PT','SK','SI','ES'].includes(data.country)) {
-                        setPricing('EUR');
-                    } else {
-                        setPricing('AUD'); // Default
-                    }
-                })
-                .catch(() => setPricing('AUD')); // Fallback to AUD
+            document.querySelectorAll('.price-currency').forEach(el => {
+                el.textContent = '$';
+            });
         })();
     </script>
 </body>
