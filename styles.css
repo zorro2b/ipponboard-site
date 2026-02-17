@@ -15,6 +15,10 @@
     --color-bg-light: #f8fafc;
     --color-bg-dark: #0f172a;
     --color-white: #ffffff;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-border-light: rgba(0,0,0,0.05);
+    --color-border-medium: rgba(0,0,0,0.1);
     --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
     --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
@@ -31,7 +35,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--color-text);
     line-height: 1.6;
-    background: var(--color-white);
+    background: var(--color-surface);
 }
 
 .container {
@@ -48,7 +52,7 @@ body {
     right: 0;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid var(--color-border-light);
     z-index: 1000;
 }
 
@@ -122,14 +126,14 @@ body {
 }
 
 .btn-secondary {
-    background: var(--color-white);
+    background: var(--color-surface);
     color: var(--color-text);
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-border);
 }
 
 .btn-secondary:hover {
     background: var(--color-bg-light);
-    border-color: #cbd5e1;
+    border-color: var(--color-border);
 }
 
 .btn-nav {
@@ -180,13 +184,15 @@ body {
     flex-wrap: wrap;
 }
 
-.hero .btn-secondary {
+.hero .btn-secondary,
+.section-accent .btn-secondary {
     background: rgba(255,255,255,0.15);
     border: 1px solid rgba(255,255,255,0.3);
     color: var(--color-white);
 }
 
-.hero .btn-secondary:hover {
+.hero .btn-secondary:hover,
+.section-accent .btn-secondary:hover {
     background: rgba(255,255,255,0.25);
 }
 
@@ -279,7 +285,7 @@ body {
 }
 
 .feature-card {
-    background: var(--color-white);
+    background: var(--color-surface);
     padding: 32px;
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
@@ -437,7 +443,7 @@ body {
 }
 
 .product-card {
-    background: var(--color-white);
+    background: var(--color-surface);
     border-radius: var(--radius-lg);
     padding: 48px 40px;
     box-shadow: var(--shadow-md);
@@ -720,7 +726,7 @@ body {
 .use-case {
     text-align: center;
     padding: 32px 20px;
-    background: var(--color-white);
+    background: var(--color-surface);
     border-radius: var(--radius-md);
 }
 
@@ -741,7 +747,7 @@ body {
 
 /* Section Variants */
 .section-white {
-    background: var(--color-white);
+    background: var(--color-surface);
 }
 
 /* Button Variants */
@@ -830,7 +836,7 @@ body {
         flex-direction: column;
         padding: 16px 24px;
         gap: 0;
-        border-bottom: 1px solid rgba(0,0,0,0.1);
+        border-bottom: 1px solid var(--color-border-medium);
         box-shadow: var(--shadow-md);
     }
 
@@ -840,7 +846,7 @@ body {
 
     .nav-links a {
         padding: 12px 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
+        border-bottom: 1px solid var(--color-border-light);
     }
 
     .nav-links a:last-child {
@@ -923,7 +929,7 @@ body {
 }
 
 .faq-item {
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid var(--color-border-medium);
 }
 
 .faq-item summary {
@@ -969,7 +975,7 @@ body {
 }
 
 .pricing-card {
-    background: white;
+    background: var(--color-surface);
     border-radius: 12px;
     padding: 2rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -1035,8 +1041,8 @@ body {
 .pricing-price {
     margin: 1.5rem 0;
     padding: 1rem 0;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
 }
 
 .price-amount {
@@ -1096,8 +1102,8 @@ body {
 
 .currency-btn {
     padding: 0.4rem 0.8rem;
-    border: 1px solid #cbd5e1;
-    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
     border-radius: 6px;
     cursor: pointer;
     font-size: 0.85rem;
@@ -1128,5 +1134,121 @@ body {
     
     .pricing-card-popular:hover {
         transform: translateY(-4px);
+    }
+}
+
+/* Dark Mode — auto-detect */
+@media (prefers-color-scheme: dark) {
+    :root:not(.light) {
+        --color-primary: #3b82f6;
+        --color-primary-dark: #2563eb;
+        --color-accent: #fbbf24;
+        --color-text: #e2e8f0;
+        --color-text-light: #94a3b8;
+        --color-bg-light: #1e293b;
+        --color-surface: #1e293b;
+        --color-border: #334155;
+        --color-border-light: rgba(255,255,255,0.05);
+        --color-border-medium: rgba(255,255,255,0.1);
+        --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+        --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+        --shadow-lg: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    :root:not(.light) .nav {
+        background: rgba(15,23,42,0.95);
+    }
+
+    :root:not(.light) .logo {
+        color: var(--color-text);
+    }
+
+    :root:not(.light) .price-amount,
+    :root:not(.light) .price-currency {
+        color: var(--color-text);
+    }
+
+    :root:not(.light) .pricing-card {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    :root:not(.light) .pricing-card:hover {
+        box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+
+    :root:not(.light) .badge-free {
+        background: #166534;
+        color: #bbf7d0;
+    }
+
+    :root:not(.light) .effective-date {
+        color: var(--color-text-light);
+    }
+
+    :root:not(.light) .screenshot:hover {
+        box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+
+    @media (max-width: 900px) {
+        :root:not(.light) .nav-links {
+            background: rgba(15,23,42,0.98);
+        }
+    }
+}
+
+/* Dark Mode — manual override via URL hash */
+:root.dark {
+    --color-primary: #3b82f6;
+    --color-primary-dark: #2563eb;
+    --color-accent: #fbbf24;
+    --color-text: #e2e8f0;
+    --color-text-light: #94a3b8;
+    --color-bg-light: #1e293b;
+    --color-surface: #1e293b;
+    --color-border: #334155;
+    --color-border-light: rgba(255,255,255,0.05);
+    --color-border-medium: rgba(255,255,255,0.1);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.3);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+:root.dark .nav {
+    background: rgba(15,23,42,0.95);
+}
+
+:root.dark .logo {
+    color: var(--color-text);
+}
+
+:root.dark .price-amount,
+:root.dark .price-currency {
+    color: var(--color-text);
+}
+
+:root.dark .pricing-card {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+:root.dark .pricing-card:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+
+:root.dark .badge-free {
+    background: #166534;
+    color: #bbf7d0;
+}
+
+:root.dark .effective-date {
+    color: var(--color-text-light);
+}
+
+:root.dark .screenshot:hover {
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+}
+
+@media (max-width: 900px) {
+    :root.dark .nav-links {
+        background: rgba(15,23,42,0.98);
     }
 }

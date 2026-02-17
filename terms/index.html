@@ -157,6 +157,19 @@
         this.classList.toggle('active');
         document.querySelector('.nav-links').classList.toggle('active');
     });
+
+    // Theme override via URL hash (#dark / #light)
+    (function() {
+        function applyTheme() {
+            var hash = window.location.hash.replace('#', '');
+            document.documentElement.classList.remove('dark', 'light');
+            if (hash === 'dark' || hash === 'light') {
+                document.documentElement.classList.add(hash);
+            }
+        }
+        applyTheme();
+        window.addEventListener('hashchange', applyTheme);
+    })();
     </script>
 </body>
 </html>

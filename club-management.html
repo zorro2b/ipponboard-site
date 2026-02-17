@@ -217,7 +217,7 @@
             <h2>See It in Action</h2>
             <p class="cta-subtitle">Start your free trial and have your club set up in minutes</p>
             <div class="hero-cta">
-                <a href="https://app.ipponboard.com/register" class="btn btn-white btn-large">
+                <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-large">
                     Start 30-Day Free Trial →
                 </a>
             </div>
@@ -434,7 +434,7 @@
             <h2>Ready to Simplify Your Club?</h2>
             <p class="cta-subtitle">Join clubs around the world using IpponBoard</p>
             <div class="hero-cta">
-                <a href="https://app.ipponboard.com/register" class="btn btn-white btn-large">
+                <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-large">
                     Start 30-Day Free Trial →
                 </a>
             </div>
@@ -612,6 +612,19 @@
         this.classList.toggle('active');
         document.querySelector('.nav-links').classList.toggle('active');
     });
+
+    // Theme override via URL hash (#dark / #light)
+    (function() {
+        function applyTheme() {
+            var hash = window.location.hash.replace('#', '');
+            document.documentElement.classList.remove('dark', 'light');
+            if (hash === 'dark' || hash === 'light') {
+                document.documentElement.classList.add(hash);
+            }
+        }
+        applyTheme();
+        window.addEventListener('hashchange', applyTheme);
+    })();
     </script>
 </body>
 </html>
