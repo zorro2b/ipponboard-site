@@ -136,7 +136,12 @@
             <div class="section-header">
                 <h2>Simple, Transparent Pricing</h2>
                 <p>Pay only for what you need. Scale as you grow.</p>
-                <div class="currency-note">Prices shown in <span id="currency-label">AUD</span></div>
+                <div class="currency-switcher">
+                    <span class="currency-label">Currency:</span>
+                    <button class="currency-btn active" data-currency="aud">AUD $</button>
+                    <button class="currency-btn" data-currency="usd">USD $</button>
+                    <button class="currency-btn" data-currency="eur">EUR €</button>
+                </div>
             </div>
             <div class="pricing-grid">
                 <!-- Free Tier -->
@@ -306,12 +311,41 @@
             </div>
         </div>
     </footer>
-    <!-- Set AUD pricing -->
+    <!-- Currency Switcher -->
     <script>
         (function() {
-            document.querySelectorAll('.price-currency').forEach(el => {
-                el.textContent = '$';
+            const currencies = {
+                aud: { symbol: '$', name: 'AUD' },
+                usd: { symbol: '$', name: 'USD' },
+                eur: { symbol: '€', name: 'EUR' }
+            };
+            
+            function setPricing(currency) {
+                const curr = currencies[currency] || currencies.aud;
+                
+                // Update price amounts
+                document.querySelectorAll('.price-amount[data-' + currency + ']').forEach(el => {
+                    el.textContent = el.getAttribute('data-' + currency);
+                });
+                
+                // Update currency symbols
+                document.querySelectorAll('.price-currency').forEach(el => {
+                    el.textContent = curr.symbol;
+                });
+                
+                // Update active button
+                document.querySelectorAll('.currency-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.currency === currency);
+                });
+            }
+            
+            // Set up click handlers
+            document.querySelectorAll('.currency-btn').forEach(btn => {
+                btn.addEventListener('click', () => setPricing(btn.dataset.currency));
             });
+            
+            // Initialize with AUD
+            setPricing('aud');
         })();
     </script>
 </body>

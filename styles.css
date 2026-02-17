@@ -1052,6 +1052,42 @@ body {
     margin-top: 0.5rem;
 }
 
+.currency-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.currency-label {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.currency-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--gray-light);
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--gray);
+    transition: all 0.2s ease;
+}
+
+.currency-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.currency-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
 @media (max-width: 768px) {
     .pricing-grid {
         grid-template-columns: 1fr;
