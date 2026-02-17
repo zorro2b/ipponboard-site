@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Judo Scoreboard App – Free Download | IpponBoard</title>
+    <meta name="description" content="Free judo scoreboard app for Windows, Mac and iPad. One-tap scoring with Olympic rules, Golden Score, Shido penalties, and match timers. No account needed.">
+    <link rel="canonical" href="https://ipponboard.com/scoreboard.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Judo Scoreboard App – Free Download | IpponBoard">
+    <meta property="og:description" content="Free judo scoreboard app for Windows, Mac and iPad. Olympic rules, Golden Score, and one-tap scoring.">
+    <meta property="og:url" content="https://ipponboard.com/scoreboard.html">
+    <meta property="og:site_name" content="IpponBoard">
+    <meta property="og:image" content="https://ipponboard.com/images/scoreboard-blank.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Judo Scoreboard App – Free Download | IpponBoard">
+    <meta name="twitter:description" content="Free judo scoreboard app for Windows, Mac and iPad. Olympic rules, Golden Score, and one-tap scoring.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,9 +29,12 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/IconIB.png" alt="IpponBoard" class="logo-img">
+                <img src="images/IconIB.png" alt="IpponBoard" class="logo-img" width="28" height="28">
                 <span class="logo-text">IpponBoard</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="scoreboard.html" class="active">Scoreboard</a>
                 <a href="club-management.html">Club Management</a>
@@ -56,7 +71,10 @@
                 <p>Getting started with IpponBoard is effortless—simply download the app and you're ready to score.</p>
             </div>
             <div class="app-showcase">
-                <img src="images/scoreboard-blank.png" alt="IpponBoard judo scoreboard interface showing White vs Blue with Ippon, Waza-ari, Yuko scoring and Shido penalties" class="screenshot" width="798" height="598" loading="lazy">
+                <picture>
+                    <source srcset="images/scoreboard-blank.webp" type="image/webp">
+                    <img src="images/scoreboard-blank.png" alt="IpponBoard judo scoreboard interface showing White vs Blue with Ippon, Waza-ari, Yuko scoring and Shido penalties" class="screenshot" width="798" height="598" loading="lazy">
+                </picture>
             </div>
 
             <div class="features-grid" style="margin-top: 60px;">
@@ -95,7 +113,10 @@
                     </ul>
                 </div>
                 <div class="feature-image">
-                    <img src="images/scoreboard-goldenscore.png" alt="IpponBoard Golden Score mode with active match showing scores and running clock" class="screenshot" width="798" height="598" loading="lazy">
+                    <picture>
+                        <source srcset="images/scoreboard-goldenscore.webp" type="image/webp">
+                        <img src="images/scoreboard-goldenscore.png" alt="IpponBoard Golden Score mode with active match showing scores and running clock" class="screenshot" width="798" height="598" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -158,13 +179,31 @@
         </div>
     </section>
 
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "IpponBoard Scoreboard",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "Windows, macOS, iPadOS",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "description": "Free judo scoreboard app with Olympic rules, Golden Score, one-tap scoring for Windows, Mac, and iPad.",
+        "url": "https://ipponboard.com/scoreboard.html"
+    }
+    </script>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="images/IconIB.png" alt="IpponBoard" class="logo-img">
+                        <img src="images/IconIB.png" alt="IpponBoard" class="logo-img" width="28" height="28">
                         <span class="logo-text">IpponBoard</span>
                     </a>
                     <p>Simple, powerful tools for martial arts clubs.</p>
@@ -176,8 +215,7 @@
                 </div>
                 <div class="footer-links">
                     <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy-policy/">Privacy Policy</a>
                 </div>
                 <div class="footer-links">
                     <h4>Support</h4>
@@ -189,5 +227,11 @@
             </div>
         </div>
     </footer>
+    <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+    </script>
 </body>
 </html>

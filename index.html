@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IpponBoard – Judo Scoreboard & Club Management Software</title>
+    <meta name="description" content="Free judo scoreboard app and club management platform built for martial arts. Score matches with Olympic rules, manage members, automate billing, and track belt progressions.">
+    <link rel="canonical" href="https://ipponboard.com/">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="IpponBoard – Judo Scoreboard & Club Management Software">
+    <meta property="og:description" content="Free judo scoreboard app and club management platform built for martial arts. Score matches, manage members, billing, and belt progressions.">
+    <meta property="og:url" content="https://ipponboard.com/">
+    <meta property="og:site_name" content="IpponBoard">
+    <meta property="og:image" content="https://ipponboard.com/images/favicon-192.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="IpponBoard – Judo Scoreboard & Club Management Software">
+    <meta name="twitter:description" content="Free judo scoreboard app and club management platform built for martial arts.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,9 +29,12 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/IconIB.png" alt="IpponBoard" class="logo-img">
+                <img src="images/IconIB.png" alt="IpponBoard" class="logo-img" width="28" height="28">
                 <span class="logo-text">IpponBoard</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="scoreboard.html">Scoreboard</a>
                 <a href="club-management.html">Club Management</a>
@@ -32,7 +47,7 @@
     <!-- Hero Section -->
     <section class="hero hero-landing">
         <div class="container">
-            <h1>Everything Your Dojo Needs</h1>
+            <h1>Judo Scoreboard & Club Management Software</h1>
             <p class="hero-subtitle">From match scoring to member management—tools built for martial arts</p>
         </div>
     </section>
@@ -286,7 +301,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="images/IconIB.png" alt="IpponBoard" class="logo-img">
+                        <img src="images/IconIB.png" alt="IpponBoard" class="logo-img" width="28" height="28">
                         <span class="logo-text">IpponBoard</span>
                     </a>
                     <p>Simple, powerful tools for martial arts clubs.</p>
@@ -298,8 +313,7 @@
                 </div>
                 <div class="footer-links">
                     <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy-policy/">Privacy Policy</a>
                 </div>
                 <div class="footer-links">
                     <h4>Support</h4>
@@ -311,6 +325,20 @@
             </div>
         </div>
     </footer>
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IpponBoard",
+        "url": "https://ipponboard.com",
+        "logo": "https://ipponboard.com/images/IconIB.png",
+        "description": "Judo scoreboard app and martial arts club management software.",
+        "email": "support@ipponboard.com",
+        "sameAs": []
+    }
+    </script>
+
     <!-- Currency Switcher -->
     <script>
         (function() {
@@ -359,6 +387,12 @@
             // Initialize based on timezone
             setPricing(detectCurrency());
         })();
+    </script>
+    <script>
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+        this.classList.toggle('active');
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
     </script>
 </body>
 </html>

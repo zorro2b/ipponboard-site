@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Club Management Software for Martial Arts | IpponBoard</title>
+    <meta name="description" content="Club management software built for martial arts. Manage members, automate billing with Stripe and Square, track attendance, schedule classes, and record belt progressions. Free for small clubs.">
+    <link rel="canonical" href="https://ipponboard.com/club-management.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Club Management Software for Martial Arts | IpponBoard">
+    <meta property="og:description" content="Manage members, automate billing, track attendance, and record belt progressions. Built for martial arts clubs. Free for small clubs.">
+    <meta property="og:url" content="https://ipponboard.com/club-management.html">
+    <meta property="og:site_name" content="IpponBoard">
+    <meta property="og:image" content="https://ipponboard.com/images/favicon-192.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Club Management Software for Martial Arts | IpponBoard">
+    <meta name="twitter:description" content="Manage members, automate billing, track attendance, and record belt progressions. Built for martial arts clubs.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,9 +29,12 @@
     <nav class="nav">
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="images/IconIB.png" alt="IpponBoard" class="logo-img">
+                <img src="images/IconIB.png" alt="IpponBoard" class="logo-img" width="28" height="28">
                 <span class="logo-text">IpponBoard</span>
             </a>
+            <button class="nav-toggle" aria-label="Toggle navigation menu">
+                <span></span><span></span><span></span>
+            </button>
             <div class="nav-links">
                 <a href="scoreboard.html">Scoreboard</a>
                 <a href="club-management.html" class="active">Club Management</a>
@@ -33,7 +48,7 @@
         <div class="container">
             <span class="hero-badge">Club Platform</span>
             <h1>Run Your Club, Not Spreadsheets</h1>
-            <p class="hero-subtitle">The complete management platform built for martial arts</p>
+            <p class="hero-subtitle">Club management software for dojos, gyms, and sports clubs — members, billing, attendance, and progressions in one place</p>
             <div class="hero-cta">
                 <a href="https://app.ipponboard.com/register" class="btn btn-primary btn-large">
                     Start 30-Day Free Trial →
@@ -93,7 +108,10 @@
                     </ul>
                 </div>
                 <div class="feature-image">
-                    <img src="images/members-screenshot.png" alt="Member Management" class="screenshot">
+                    <picture>
+                        <source srcset="images/members-screenshot.webp" type="image/webp">
+                        <img src="images/members-screenshot.png" alt="Member Management" class="screenshot" width="1920" height="1080" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -116,7 +134,10 @@
                     </ul>
                 </div>
                 <div class="feature-image">
-                    <img src="images/billing-screenshot.png" alt="Subscription Billing" class="screenshot">
+                    <picture>
+                        <source srcset="images/billing-screenshot.webp" type="image/webp">
+                        <img src="images/billing-screenshot.png" alt="Subscription Billing" class="screenshot" width="1920" height="1080" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -139,7 +160,10 @@
                     </ul>
                 </div>
                 <div class="feature-image">
-                    <img src="images/attendance-screenshot.png" alt="Attendance Tracking" class="screenshot">
+                    <picture>
+                        <source srcset="images/attendance-screenshot.webp" type="image/webp">
+                        <img src="images/attendance-screenshot.png" alt="Attendance Tracking" class="screenshot" width="1920" height="1080" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -162,7 +186,10 @@
                     </ul>
                 </div>
                 <div class="feature-image">
-                    <img src="images/grades-screenshot.png" alt="Grades & Milestones" class="screenshot">
+                    <picture>
+                        <source srcset="images/grades-screenshot.webp" type="image/webp">
+                        <img src="images/grades-screenshot.png" alt="Grades & Milestones" class="screenshot" width="1920" height="1080" loading="lazy">
+                    </picture>
                 </div>
             </div>
         </div>
@@ -363,7 +390,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <a href="index.html" class="logo">
-                        <img src="images/IconIB.png" alt="IpponBoard" class="logo-img">
+                        <img src="images/IconIB.png" alt="IpponBoard" class="logo-img" width="28" height="28">
                         <span class="logo-text">IpponBoard</span>
                     </a>
                     <p>Simple, powerful tools for martial arts clubs.</p>
@@ -375,8 +402,7 @@
                 </div>
                 <div class="footer-links">
                     <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
+                    <a href="privacy-policy/">Privacy Policy</a>
                 </div>
                 <div class="footer-links">
                     <h4>Support</h4>
@@ -388,6 +414,49 @@
             </div>
         </div>
     </footer>
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "IpponBoard Club Management",
+        "description": "Complete club management platform for martial arts. Members, billing, classes, attendance, and belt progressions.",
+        "brand": {
+            "@type": "Brand",
+            "name": "IpponBoard"
+        },
+        "url": "https://ipponboard.com/club-management.html",
+        "offers": [
+            {
+                "@type": "Offer",
+                "name": "Starter",
+                "price": "0",
+                "priceCurrency": "AUD",
+                "availability": "https://schema.org/InStock",
+                "url": "https://app.ipponboard.com/register"
+            },
+            {
+                "@type": "Offer",
+                "name": "Growing",
+                "price": "79",
+                "priceCurrency": "AUD",
+                "priceValidUntil": "2027-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://app.ipponboard.com/register"
+            },
+            {
+                "@type": "Offer",
+                "name": "Established",
+                "price": "119",
+                "priceCurrency": "AUD",
+                "priceValidUntil": "2027-12-31",
+                "availability": "https://schema.org/InStock",
+                "url": "https://app.ipponboard.com/register"
+            }
+        ]
+    }
+    </script>
+
     <script src="lightbox.js"></script>
 
     <!-- Currency Switcher -->
