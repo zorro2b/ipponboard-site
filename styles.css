@@ -1132,51 +1132,68 @@ body {
     color: var(--color-white);
 }
 
-/* Pricing Includes Section */
-.pricing-includes {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    text-align: center;
-}
-
-.pricing-includes h3 {
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin-bottom: 1.25rem;
-    color: var(--color-text);
-}
-
-.pricing-includes-grid {
+/* Includes Grid (mini feature cards) */
+.includes-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem 2rem;
-    text-align: left;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.pricing-includes-grid span {
-    font-size: 0.95rem;
+.includes-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1rem;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.includes-card:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.includes-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.includes-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.3;
+}
+
+/* Light section variant */
+.section-white .includes-card,
+.section-light .includes-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-white .includes-card:hover,
+.section-light .includes-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.section-white .includes-label,
+.section-light .includes-label {
     color: var(--color-text);
-    padding: 0.4rem 0;
 }
 
-.section-dark .pricing-includes h3 {
-    color: var(--color-white);
-}
-
-.section-dark .pricing-includes-grid span {
-    color: rgba(255,255,255,0.8);
-}
-
-@media (max-width: 700px) {
-    .pricing-includes-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.4rem 1.5rem;
+@media (max-width: 800px) {
+    .includes-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (max-width: 450px) {
-    .pricing-includes-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 550px) {
+    .includes-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
