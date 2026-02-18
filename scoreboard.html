@@ -20,6 +20,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Analytics (consent mode) -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    var cc = document.cookie.match(/cookie_consent=([^;]*)/);
+    gtag('consent', 'default', {
+        'analytics_storage': (cc && cc[1] === 'granted') ? 'granted' : 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+    });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYP6LXEM63"></script>
+    <script>
+    gtag('js', new Date());
+    gtag('config', 'G-BYP6LXEM63', { send_page_view: true });
+    </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
     <link rel="icon" type="image/png" sizes="192x192" href="images/favicon-192.png">
@@ -315,6 +332,35 @@
         }
         applyTheme();
         window.addEventListener('hashchange', applyTheme);
+    })();
+    </script>
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner" style="display:none" role="dialog" aria-label="Cookie consent">
+        <p>We use cookies for analytics to improve our site. <a href="privacy-policy/">Privacy Policy</a></p>
+        <div class="cookie-banner-buttons">
+            <button class="cookie-btn-accept" id="cookieAccept">Accept</button>
+            <button class="cookie-btn-decline" id="cookieDecline">Decline</button>
+        </div>
+    </div>
+    <script>
+    (function() {
+        var consent = document.cookie.match(/cookie_consent=([^;]*)/);
+        if (consent) {
+            if (consent[1] === 'granted') {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            }
+            return;
+        }
+        document.getElementById('cookieBanner').style.display = '';
+        document.getElementById('cookieAccept').onclick = function() {
+            document.cookie = 'cookie_consent=granted; max-age=31536000; path=/; SameSite=Lax';
+            gtag('consent', 'update', { 'analytics_storage': 'granted' });
+            document.getElementById('cookieBanner').style.display = 'none';
+        };
+        document.getElementById('cookieDecline').onclick = function() {
+            document.cookie = 'cookie_consent=denied; max-age=31536000; path=/; SameSite=Lax';
+            document.getElementById('cookieBanner').style.display = 'none';
+        };
     })();
     </script>
 </body>
