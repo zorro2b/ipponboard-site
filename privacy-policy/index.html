@@ -61,7 +61,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" style="padding: 3rem 0 2rem;">
+    <section class="hero" style="padding: 7rem 0 2rem;">
         <div class="container">
             <h1>Privacy Policy</h1>
             <p class="hero-subtitle">IpponBoard Platform & Mobile App</p>
@@ -145,11 +145,43 @@
             <h2>4. Data Storage and Security</h2>
             <p>We use reasonable administrative, technical, and organisational measures to protect your information against unauthorised access, loss, or misuse. While we strive to protect your data, no system can be guaranteed to be 100% secure.</p>
 
-            <h2>5. Data Retention</h2>
+            <h2>5. Cookies</h2>
+
+            <h3>5.1 Essential Cookies</h3>
+            <p>The IpponBoard application uses cookies that are strictly necessary for it to function, such as maintaining your login session. These cookies are processed on the basis of contract necessity (GDPR Art. 6(1)(b)) and do not require consent. They are session cookies that expire when you close your browser or after a period of inactivity.</p>
+
+            <h3>5.2 Analytics Cookies</h3>
+            <p>Our marketing website (ipponboard.com) uses Google Analytics 4, provided by Google Ireland Limited, to understand how visitors interact with the site. These cookies are set only with your explicit consent (GDPR Art. 6(1)(a)). No analytics cookies are used within the IpponBoard application.</p>
+
+            <p><strong>Data collected by Google Analytics:</strong></p>
+            <ul>
+                <li>Pages visited and time spent on each page</li>
+                <li>Referral source (how you arrived at the site)</li>
+                <li>Device type, browser, and operating system</li>
+                <li>Approximate geographic location (country/region level)</li>
+                <li>IP address (anonymised before storage)</li>
+            </ul>
+
+            <p><strong>Cookie durations:</strong></p>
+            <ul>
+                <li><code>_ga</code> — used to distinguish visitors (expires after 2 years)</li>
+                <li><code>_ga_*</code> — used to maintain session state (expires after 24 hours)</li>
+                <li><code>cookie_consent</code> — stores your cookie preference (expires after 1 year)</li>
+            </ul>
+
+            <p><strong>Data transfers:</strong> Google Analytics data may be transferred to and processed by Google LLC in the United States. These transfers are protected by Standard Contractual Clauses (SCCs) approved by the European Commission. For more information, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+            <h3>5.3 Managing Your Cookie Preferences</h3>
+            <p>You can withdraw your analytics cookie consent at any time by clicking the "Cookie Settings" link in the footer of any page. This immediately stops analytics tracking and re-presents the consent choice.</p>
+
+            <h3>5.4 Do Not Track / US State Privacy Laws</h3>
+            <p>If you are a resident of California or another US state with consumer privacy legislation, Google Analytics may constitute "sharing" of personal information under those laws. When analytics consent is denied or withdrawn, no data is shared with Google Analytics. We do not sell personal information. You may exercise your privacy rights by contacting us using the details below.</p>
+
+            <h2>6. Data Retention</h2>
             <p>We retain personal information only for as long as necessary to fulfil the purposes outlined in this policy, unless a longer retention period is required by law or your club.</p>
             <p>When your account is deleted, your personal data will be deleted or anonymised, except where retention is required for legal or operational reasons (e.g. financial records).</p>
 
-            <h2>6. Your Rights</h2>
+            <h2>7. Your Rights</h2>
             <p>Depending on your location, you may have the right to:</p>
             <ul>
                 <li>Access the personal information we hold about you</li>
@@ -160,16 +192,16 @@
             </ul>
             <p>Requests can be made by contacting us using the details below.</p>
 
-            <h2>7. Notifications and Communications</h2>
+            <h2>8. Notifications and Communications</h2>
             <p>IpponBoard sends notifications related to your membership, training sessions, events, and club activity. You can manage notification preferences through your device or app settings.</p>
 
-            <h2>8. Children's Privacy</h2>
+            <h2>9. Children's Privacy</h2>
             <p>IpponBoard may be used by members under 16 with parental or guardian consent. Personal information for minors is collected and managed by their parent, guardian, or club administrator. We do not knowingly collect personal information directly from children without appropriate consent.</p>
 
-            <h2>9. Changes to This Privacy Policy</h2>
+            <h2>10. Changes to This Privacy Policy</h2>
             <p>We may update this Privacy Policy from time to time. Changes will be effective when posted within the App or on our website. Continued use of the App constitutes acceptance of the updated policy.</p>
 
-            <h2>10. Contact Us</h2>
+            <h2>11. Contact Us</h2>
             <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
             <p>IpponBoard<br>Email: <a href="mailto:support@ipponboard.com">support@ipponboard.com</a></p>
 
@@ -197,6 +229,7 @@
                     <h4>Legal</h4>
                     <a href="../privacy-policy/">Privacy Policy</a>
                     <a href="../terms/">Terms of Service</a>
+                    <a href="#" id="cookieSettings">Cookie Settings</a>
                 </div>
                 <div class="footer-links">
                     <h4>Support</h4>
@@ -238,23 +271,25 @@
     </div>
     <script>
     (function() {
+        var banner = document.getElementById('cookieBanner');
         var consent = document.cookie.match(/cookie_consent=([^;]*)/);
-        if (consent) {
-            if (consent[1] === 'granted') {
-                gtag('consent', 'update', { 'analytics_storage': 'granted' });
-            }
-            return;
-        }
-        document.getElementById('cookieBanner').style.display = '';
-        document.getElementById('cookieAccept').onclick = function() {
+        if (!consent) banner.style.display = '';
+
+        document.getElementById('cookieAccept').addEventListener('click', function() {
             document.cookie = 'cookie_consent=granted; max-age=31536000; path=/; SameSite=Lax';
             gtag('consent', 'update', { 'analytics_storage': 'granted' });
-            document.getElementById('cookieBanner').style.display = 'none';
-        };
-        document.getElementById('cookieDecline').onclick = function() {
+            banner.style.display = 'none';
+        });
+        document.getElementById('cookieDecline').addEventListener('click', function() {
             document.cookie = 'cookie_consent=denied; max-age=31536000; path=/; SameSite=Lax';
-            document.getElementById('cookieBanner').style.display = 'none';
-        };
+            banner.style.display = 'none';
+        });
+        document.getElementById('cookieSettings').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.cookie = 'cookie_consent=; max-age=0; path=/';
+            gtag('consent', 'update', { 'analytics_storage': 'denied' });
+            banner.style.display = '';
+        });
     })();
     </script>
 </body>

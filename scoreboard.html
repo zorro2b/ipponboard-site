@@ -303,6 +303,7 @@
                     <h4>Legal</h4>
                     <a href="privacy-policy/">Privacy Policy</a>
                     <a href="terms/">Terms of Service</a>
+                    <a href="#" id="cookieSettings">Cookie Settings</a>
                 </div>
                 <div class="footer-links">
                     <h4>Support</h4>
@@ -344,23 +345,25 @@
     </div>
     <script>
     (function() {
+        var banner = document.getElementById('cookieBanner');
         var consent = document.cookie.match(/cookie_consent=([^;]*)/);
-        if (consent) {
-            if (consent[1] === 'granted') {
-                gtag('consent', 'update', { 'analytics_storage': 'granted' });
-            }
-            return;
-        }
-        document.getElementById('cookieBanner').style.display = '';
-        document.getElementById('cookieAccept').onclick = function() {
+        if (!consent) banner.style.display = '';
+
+        document.getElementById('cookieAccept').addEventListener('click', function() {
             document.cookie = 'cookie_consent=granted; max-age=31536000; path=/; SameSite=Lax';
             gtag('consent', 'update', { 'analytics_storage': 'granted' });
-            document.getElementById('cookieBanner').style.display = 'none';
-        };
-        document.getElementById('cookieDecline').onclick = function() {
+            banner.style.display = 'none';
+        });
+        document.getElementById('cookieDecline').addEventListener('click', function() {
             document.cookie = 'cookie_consent=denied; max-age=31536000; path=/; SameSite=Lax';
-            document.getElementById('cookieBanner').style.display = 'none';
-        };
+            banner.style.display = 'none';
+        });
+        document.getElementById('cookieSettings').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.cookie = 'cookie_consent=; max-age=0; path=/';
+            gtag('consent', 'update', { 'analytics_storage': 'denied' });
+            banner.style.display = '';
+        });
     })();
     </script>
 </body>
