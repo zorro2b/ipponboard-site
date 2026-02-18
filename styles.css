@@ -1185,15 +1185,59 @@ body {
     color: var(--color-text);
 }
 
+/* Descriptive variant — 2-column with icon + label + description */
+.includes-grid-desc {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    gap: 1.25rem;
+}
+
+.includes-grid-desc .includes-card {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+}
+
+.includes-grid-desc .includes-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.includes-text {
+    min-width: 0;
+}
+
+.includes-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+    margin-top: 0.25rem;
+}
+
+.section-white .includes-desc,
+.section-light .includes-desc {
+    color: var(--color-text-light);
+}
+
 @media (max-width: 800px) {
     .includes-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .includes-grid-desc {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 550px) {
     .includes-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .includes-grid-desc {
+        grid-template-columns: 1fr;
     }
 }
 
