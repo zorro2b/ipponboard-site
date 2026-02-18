@@ -974,6 +974,15 @@ body {
     margin-top: 2rem;
 }
 
+.pricing-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    align-items: start;
+}
+
 .pricing-card {
     background: var(--color-surface);
     border-radius: 12px;
@@ -1123,15 +1132,208 @@ body {
     color: var(--color-white);
 }
 
+/* Includes Grid (mini feature cards) */
+.includes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.includes-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1rem;
+    text-align: center;
+    transition: background 0.2s;
+}
+
+.includes-card:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.includes-icon {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.includes-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.3;
+}
+
+/* Light section variant */
+.section-white .includes-card,
+.section-light .includes-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-white .includes-card:hover,
+.section-light .includes-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.section-white .includes-label,
+.section-light .includes-label {
+    color: var(--color-text);
+}
+
+/* Descriptive variant — 2-column with icon + label + description */
+.includes-grid-desc {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1000px;
+    gap: 1.25rem;
+}
+
+.includes-grid-desc .includes-card {
+    display: flex;
+    align-items: flex-start;
+    text-align: left;
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+}
+
+.includes-grid-desc .includes-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.includes-text {
+    min-width: 0;
+}
+
+.includes-desc {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.4;
+    margin-top: 0.25rem;
+}
+
+.section-white .includes-desc,
+.section-light .includes-desc {
+    color: var(--color-text-light);
+}
+
+@media (max-width: 800px) {
+    .includes-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .includes-grid-desc {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .includes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .includes-grid-desc {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pricing-card-note {
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0 0 1.5rem;
+    flex-grow: 1;
+}
+
+.pricing-features-short {
+    flex-grow: 0;
+}
+
+/* Pricing Table (inside cards) */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 1rem;
+}
+
+.pricing-table tr {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.pricing-table tr:last-child {
+    border-bottom: none;
+}
+
+.pricing-table td {
+    padding: 0.75rem 0;
+    font-size: 0.95rem;
+}
+
+.pricing-table .tier-name {
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.pricing-table .tier-members {
+    color: var(--color-text-light);
+    padding-left: 1rem;
+}
+
+.pricing-table .tier-price {
+    text-align: right;
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--color-text);
+}
+
+.pricing-table .tier-price .price-amount {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.pricing-table .tier-price .price-currency {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.pricing-table .tier-price .price-period {
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.pricing-table .tier-price .price-from {
+    font-size: 0.8rem;
+    font-weight: 400;
+}
+
+.pricing-table-note {
+    text-align: center;
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+    margin: 0 0 1.5rem;
+}
+
+@media (max-width: 900px) {
+    .pricing-grid-3 {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+}
+
 @media (max-width: 768px) {
     .pricing-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .pricing-card-popular {
         transform: none;
     }
-    
+
     .pricing-card-popular:hover {
         transform: translateY(-4px);
     }
@@ -1165,6 +1367,11 @@ body {
 
     :root:not(.light) .price-amount,
     :root:not(.light) .price-currency {
+        color: var(--color-text);
+    }
+
+    :root:not(.light) .pricing-table .tier-name,
+    :root:not(.light) .pricing-table .tier-price {
         color: var(--color-text);
     }
 
@@ -1223,6 +1430,11 @@ body {
 
 :root.dark .price-amount,
 :root.dark .price-currency {
+    color: var(--color-text);
+}
+
+:root.dark .pricing-table .tier-name,
+:root.dark .pricing-table .tier-price {
     color: var(--color-text);
 }
 
